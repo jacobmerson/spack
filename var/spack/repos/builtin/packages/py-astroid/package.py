@@ -29,3 +29,4 @@ class PyAstroid(PythonPackage):
     depends_on('py-singledispatch', when='^python@:3.3.99')
     depends_on('py-backports-functools-lru-cache', when='^python@:3.2.99')
     depends_on('py-setuptools@17.1:')
+    depends_on('py-typed-ast@1.3.0:', when='@2.2.0')

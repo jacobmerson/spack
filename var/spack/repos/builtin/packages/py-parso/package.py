@@ -15,6 +15,7 @@ class PyParso(PythonPackage):
     homepage = "https://pypi.org/project/parso/"
     url      = "https://pypi.io/packages/source/p/parso/parso-0.6.1.tar.gz"
 
+    version('0.7.0', sha256='908e9fae2144a076d72ae4e25539143d40b8e3eafbaeae03c1bfe226f4cdf12c')
     version('0.6.1', sha256='56b2105a80e9c4df49de85e125feb6be69f49920e121406f15e7acde6c9dfc57')
 
     depends_on('python@2.7:2.8,3.4:', type=('build', 'run'))

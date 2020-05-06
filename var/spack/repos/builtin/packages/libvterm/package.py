@@ -10,8 +10,10 @@ class Libvterm(Package):
     """An abstract library implementation of a terminal emulator"""
     homepage = "http://www.leonerd.org.uk/code/libvterm/"
     url      = "http://www.leonerd.org.uk/code/libvterm/libvterm-0+bzr681.tar.gz"
+    git = 'https://github.com/neovim/libvterm'
 
-    version('681', sha256='abea46d1b0b831dec2af5d582319635cece63d260f8298d9ccce7c1c2e62a6e8')
+    # version('681', sha256='abea46d1b0b831dec2af5d582319635cece63d260f8298d9ccce7c1c2e62a6e8')
+    version('0.1', branch='v0.1')
 
     depends_on('libtool', type='build')
 

@@ -12,6 +12,7 @@ class PyJedi(PythonPackage):
     homepage = "https://github.com/davidhalter/jedi"
     url      = "https://pypi.io/packages/source/j/jedi/jedi-0.9.0.tar.gz"
 
+    version('0.17.0', sha256='df40c97641cb943661d2db4c33c2e1ff75d491189423249e989bcea4464f3030')
     version('0.13.3', sha256='2bb0603e3506f708e792c7f4ad8fc2a7a9d9c2d292a358fbbd58da531695595b')
     # unfortunately pypi.io only offers a .whl for 0.10.0
     version('0.10.0', sha256='d6a7344df9c80562c3f62199278004ccc7c5889be9f1a6aa5abde117ec085123',
@@ -26,3 +27,4 @@ class PyJedi(PythonPackage):
     depends_on('py-parso@0.1.1', type=('build', 'run'), when='@0.11.1')
     depends_on('py-parso@0.2.0:', type=('build', 'run'), when='@0.12.0')
     depends_on('py-parso@0.3.0:', type=('build', 'run'), when='@0.12.1:0.14.0')
+    depends_on('py-parso@0.7.0:', type=('build', 'run'), when='@0.17.0:')

@@ -13,6 +13,14 @@ class Neovim(CMakePackage):
     homepage = "http://neovim.io"
     url      = "https://github.com/neovim/neovim/archive/v0.3.4.tar.gz"
 
+    variant('build_type', default='Release',
+            description='CMake build type',
+            values=('Debug', 'Release', 'RelWithDebInfo', 'MinSizeRel'))
+    variant('python', default=False)
+
+    generator = 'Ninja'
+
+    version('0.4.3', sha256='91a0b5d32204a821bf414690e6b48cf69224d1961d37158c2b383f6a6cf854d2')
     version('0.3.4', sha256='a641108bdebfaf319844ed46b1bf35d6f7c30ef5aeadeb29ba06e19c3274bc0e')
     version('0.3.1', sha256='bc5e392d4c076407906ccecbc283e1a44b7832c2f486cad81aa04cc29973ad22')
     version('0.3.0', sha256='f7acb61b16d3f521907d99c486b7a9f1e505e8b2a18c9ef69a6d7f18f29f74b8')
@@ -24,13 +32,20 @@ class Neovim(CMakePackage):
     depends_on('lua-lpeg')
     depends_on('lua-mpack')
     depends_on('lua-bitlib')
+    depends_on('lua-luv@1.30.0:', when='@0.4.3')
     depends_on('libuv')
+    depends_on('libuv@1.28.0:', when='@0.4.3:')
     depends_on('jemalloc')
     depends_on('libtermkey')
+    depends_on('libtermkey@0.18:', when='@0.4.3')
     depends_on('libvterm')
+    depends_on('libvterm@0.1:', when='@0.4.3')
     depends_on('unibilium')
+    depends_on('unibilium@2:', when='@0.4.3:')
     depends_on('msgpack-c')
     depends_on('gperf')
+    depends_on('py-pynvim', when='+python', type='run')
+    depends_on('ninja', type='build')
 
     def cmake_args(self):
         args = []
